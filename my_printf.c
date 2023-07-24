@@ -12,6 +12,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
+	int num;
 	va_list args;
 	va_start(args, format);
 
@@ -40,6 +41,12 @@ int _printf(const char *format, ...)
 					i++;
 				}
 			}
+			else if ((*format == 'd') || (*format == 'i'))
+			{
+				num = va_arg(args, int);
+				print_number(num);
+				i++;
+			}
 		}
 		else
 		{
@@ -48,5 +55,6 @@ int _printf(const char *format, ...)
 			i++;
 		}
 	}
+	va_end(args);
 	return (i);
 }
