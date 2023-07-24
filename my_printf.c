@@ -12,7 +12,8 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	int num;
+	int num, ch;
+	char *string;
 	va_list args;
 	va_start(args, format);
 
@@ -29,13 +30,14 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				_putchar(*format);
+				ch = va_arg(args, int);
+				_putchar(ch);
 				i++;
 				format++;
 			}
 			else if (*format == 's')
 			{
-				char *string = va_arg(args, char*);
+				string = va_arg(args, char*);
 				while (*string)
 				{
 					_putchar(*string);
