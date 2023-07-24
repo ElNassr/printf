@@ -25,11 +25,13 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				i++;
+				format++;
 			}
 			else if (*format == 'c')
 			{
 				_putchar(*format);
 				i++;
+				format++;
 			}
 			else if (*format == 's')
 			{
@@ -40,11 +42,13 @@ int _printf(const char *format, ...)
 					string++;
 					i++;
 				}
+				format++;
 			}
 			else if ((*format == 'd') || (*format == 'i'))
 			{
 				num = va_arg(args, int);
 				print_number(num);
+				format++;
 				i++;
 			}
 		}
