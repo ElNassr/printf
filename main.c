@@ -48,5 +48,30 @@ int main(void)
 	printf("big:[%d]\n", 1560133635);
 	_printf("Negative:[%d]\n", -2035065302);
 	printf("Negative:[%d]\n", -2035065302);
+	printf("\n########### other tests #########\n\n");
+	_printf("A mix of %%d, %%c, and regular text.\n");
+	printf("A mix of %%d, %%c, and regular text.\n");
+	_printf("Unsupported: %x\n", 42);
+	printf("Unsupported: %x\n", 42);
+	char specialChar = '\n';
+	_printf("Special Character: %c\n", specialChar);
+	printf("Special Character: %c\n", specialChar);
+	int negativeLargeNum = -2147483648; // Minimum value for a 32-bit integer
+	_printf("Negative Large Integer: %d\n", negativeLargeNum);
+	printf("Negative Large Integer: %d\n", negativeLargeNum);
+	int largeNum = 2147483647; // Maximum positive value for a 32-bit integer
+	_printf("Large Integer: %d\n", largeNum);
+	printf("Large Integer: %d\n", largeNum);
+	char *longStr = "This is a very long string that exceeds the buffer size";
+	_printf("Long String: %s\n", longStr);
+	printf("Long String: %s\n", longStr);
+	char *nullStr = NULL;
+	_printf("Null String: %s\n", nullStr);
+	printf("Null String: %s\n", nullStr);
+	char *percentStr = "100%";
+	_printf("Percentage: %s\n", percentStr);
+	printf("Percentage: %s\n", percentStr);
+	_printf("");
+	printf("");
 	return (0);
 }

@@ -25,7 +25,7 @@ int len(int n)
 	int l = 1000000000;
 	int i = 0;
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if ((n / l) != 0)
 		{
@@ -56,7 +56,8 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar(m);
-		x = - n;
+		x = n + 1;
+		x = - x;
 	}
 	for (c = 0; c < 9; c++)
 	{
@@ -75,5 +76,12 @@ void print_number(int n)
 		l /= 10;
 		i = 48;
 	}
-	_putchar((i + (x % 10)));
+	if (n < 0)
+	{
+		_putchar((i + 1 + (x % 10)));
+	}
+	else
+	{
+		_putchar((i + (x % 10)));
+	}
 }

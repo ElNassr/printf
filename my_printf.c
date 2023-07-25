@@ -38,11 +38,19 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				string = va_arg(args, char*);
-				while (*string)
+				if (string == NULL)
 				{
-					_putchar(*string);
-					string++;
-					i++;
+					_printf("(null)");
+					i += 6;
+				}
+				else
+				{
+					while (*string)
+					{
+						_putchar(*string);
+						string++;
+						i++;
+					}
 				}
 				format++;
 			}
@@ -57,6 +65,8 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				_putchar(*format);
+				i += 2;
+				format++;
 			}
 		}
 		else
