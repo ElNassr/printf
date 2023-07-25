@@ -53,6 +53,11 @@ int _printf(const char *format, ...)
 				format++;
 				i++;
 			}
+			else
+			{
+				_putchar('%');
+				_putchar(*format);
+			}
 		}
 		else
 		{

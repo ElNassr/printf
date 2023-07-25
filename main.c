@@ -40,5 +40,13 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 /*	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n"); */
+	_printf("d\n", 0);
+	printf("%d\n", 0);
+	_printf("Negative:[%d]\n", -762534);
+	printf("Negative:[%d]\n", -762534);
+	_printf("big:[%d]\n", 1560133635);
+	printf("big:[%d]\n", 1560133635);
+	_printf("Negative:[%d]\n", -2035065302);
+	printf("Negative:[%d]\n", -2035065302);
 	return (0);
 }
